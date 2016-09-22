@@ -191,14 +191,13 @@ span.psw {
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="button" onclick="myFun()" style="width:auto;">Login</button>
-      <span class="psw"> <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel
-      </button></span>
+     
+      <button type="button" onclick="formValidation()" style="width:auto;">Login</button>
+    
     </div>
  <div class="container" style="background-color:#f1f1f1">
-    <input type="checkbox" checked="checked"> Remember me
+   
       
-      <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
   </form>
 </div>
@@ -216,9 +215,20 @@ function myFun() {
     var userName = document.getElementById("username").value
     alert("Hi " + userName);
 }
+
+function formValidation() {
+        var userNameValue = document.getElementById("username").value,
+            passwordValue = document.getElementById("username").value,
+            userMsg = document.getElementById("user");
+        
+        if (userNameValue.trim().length>0 && passwordValue.trim().length>0 ) {
+            userMsg.innerHTML = "Hi "+userNameValue;
+        } else {
+            alert("Please enter Username/Password to login!");
+        }
+        
+}
 </script>
-
-
 
 </body>
 </html>
